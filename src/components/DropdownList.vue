@@ -2,7 +2,7 @@
   <div class="dropdown-container">
     <div class="dropdown-header" @click="toggleDropdown">
       <span class="selected-text">{{ selectedEntity }}</span>
-      <span class="arrow-down"></span> <!-- Стрелочка вниз -->
+      <span class="arrow-down"></span>
     </div>
     <ul v-if="isOpen" class="dropdown-list">
       <li v-for="entity in entities" :key="entity" @click="handleSelect(entity)">
