@@ -1,7 +1,9 @@
 <template>
   <div class="result-area">
-    <div v-for="(result, index) in results" :key="index" class="result-item">
-      {{ result }}
+    <div class="content">
+      <div v-for="(result, index) in results" :key="index" class="result-item">
+        {{ result }}
+      </div>
     </div>
   </div>
 </template>
@@ -16,7 +18,24 @@ const results = ref<string[]>(store.results);
 
 <style scoped>
 .result-area {
-  margin-top: 20px;
+  position: relative;
+  border-radius: 7px;
+  background-color: #ddd;
+  height: 200px;
+  overflow: auto; 
+}
+
+.content {
+  max-height: 100%;
+}
+
+.content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 4px;
 }
 
 .result-item {

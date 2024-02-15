@@ -1,9 +1,12 @@
 <template>
   <button :class="{ 'active': isActive, 'white-background': isSelectedNone }" @click="handleClick" :disabled="!isActive" class="button">
     {{ buttonText }}
-    <div v-if="isLoading" class="loader"></div>
+    <div v-if="isLoading" class="loader-container">
+      <div class="loader"></div>
+    </div>
   </button>
 </template>
+
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useStore } from '../store/index';
@@ -15,6 +18,7 @@ function handleClick() {
   useStore().createEntity();
 }
 </script>
+
 <style scoped>
 .button {
   color: rgb(20, 20, 20);
@@ -23,6 +27,7 @@ function handleClick() {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease; 
 }
 .button.active {
   background-color: #007bff;
@@ -31,8 +36,14 @@ function handleClick() {
 .white-background {
   background-color: rgb(255, 255, 255);
 }
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .loader {
-  border: 4px solid #ffffff;
+  border: 4px solid #f3f3f3;
   border-top: 4px solid #3498db;
   border-radius: 50%;
   width: 20px;

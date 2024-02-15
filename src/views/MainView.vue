@@ -40,8 +40,10 @@ export default class MainView extends Vue {}
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -200%);
+  transform: translate(-50%, -50%); 
   text-align: center;
+  display: flex;
+  flex-direction: column; 
 }
 
 .components-wrapper {
@@ -49,5 +51,6 @@ export default class MainView extends Vue {}
   justify-content: center;
   align-items: center;
   gap: 10px; 
+  margin-bottom: 20px;
 }
 </style>

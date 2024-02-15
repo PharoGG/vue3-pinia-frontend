@@ -64,6 +64,7 @@ onMounted(() => {
   border-top: 6px solid #333; 
 }
 .dropdown-list {
+  z-index: 1;
   width: 200px;
   position: absolute;
   top: 100%;
