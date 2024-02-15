@@ -1,8 +1,10 @@
 <template>
   <div class="container">
     <div class="centered-content">
-      <DropdownList />
-      <ButtonCreate />
+      <div class="components-wrapper">
+        <DropdownList />
+        <ButtonCreate />
+      </div>
       <ResultArea />
     </div>
   </div>
@@ -31,7 +33,7 @@ export default class MainView extends Vue {}
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #bebebe;
+  background-color: #bebebe; 
 }
 
 .centered-content {
@@ -40,5 +42,12 @@ export default class MainView extends Vue {}
   left: 50%;
   transform: translate(-50%, -200%);
   text-align: center;
+}
+
+.components-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
 }
 </style>
